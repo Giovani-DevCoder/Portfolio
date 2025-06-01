@@ -6,7 +6,7 @@ import Skills from "./components/sections/Skills";  // Nueva línea
 import SideNavigation from "./components/SideNavigation"
 import NavigationButtons from "./components/NavigationButtons"
 import "./App.css"
-
+import Header from "./components/sections/Header";
 
 function App() {
   const [currentSection, setCurrentSection] = useState(0)
@@ -55,8 +55,12 @@ function App() {
 
   return (
     <div className="app-container">
+      <Header
+      currentSection={currentSection}
+      navigateToSection={navigateToSection}
+      sections={sections}
+      />
       <SideNavigation currentSection={currentSection} totalSections={totalSections} onNavigate={navigateToSection} />
-
       <div className="sections-container">
         {sections.map((section, index) => (
           <div

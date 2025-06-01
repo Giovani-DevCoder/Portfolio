@@ -53,7 +53,6 @@ export default function EnhancedBlackHole({ coreImageWEBP, coreImagePNG, ringIma
       const baseFreqY3 = 0.025 + Math.abs(sinValue + cosValue) * 0.01
       const scale3 = 12 + Math.abs(sinValue * cosValue) * 8
 
-      // Aplicamos los valores calculados a los filtros SVG
       turbulence.setAttribute("baseFrequency", `${baseFreqX} ${baseFreqY}`)
       turbulence.setAttribute("seed", (phaseRef.current * 100).toString())
       displacementMap.setAttribute("scale", scale.toString())
@@ -66,16 +65,13 @@ export default function EnhancedBlackHole({ coreImageWEBP, coreImagePNG, ringIma
       turbulence3.setAttribute("seed", ((phaseRef.current * 100 + 25) % 100).toString())
       displacementMap3.setAttribute("scale", scale3.toString())
 
-      // Solicitamos el siguiente frame de animación
       requestAnimationFrame(animate)
     }
 
-    // Solo iniciamos la animación cuando las imágenes estén cargadas
     if (isLoaded) {
       requestAnimationFrame(animate)
     }
 
-    // Limpieza al desmontar el componente
     return () => {
       lastTimeRef.current = 0
     }
@@ -169,7 +165,7 @@ export default function EnhancedBlackHole({ coreImageWEBP, coreImagePNG, ringIma
         </defs>
       </svg>
 
-      <div className="relative w-[min(70vw,700px)] h-[min(52.5vw,525px)]">
+      <div className="relative w-[min(60vw,600px)] h-[min(52.5vw,525px)]">
         {/* Aro del agujero negro con distorsión en múltiples capas */}
         <div
           id="distortedRing"
@@ -244,7 +240,7 @@ export default function EnhancedBlackHole({ coreImageWEBP, coreImagePNG, ringIma
 
         {/* Efecto de brillo adicional */}
         <div
-          className="absolute inset-0 z-13"
+          className="absolute inset-0 z-30"
           style={{
             filter: "url(#glow)",
             willChange: "filter",

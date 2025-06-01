@@ -8,7 +8,7 @@ import BlackHoleAnimation from "../BlackHole"; // Asegúrate de tener la ruta co
 
 const Home = () => {
   return (
-    <section className="relative flex items-center justify-center min-h-screen">
+    <section className="relative flex items-center justify-between min-h-screen">
       {/* Reemplazamos las imágenes estáticas por el componente animado */}
       <BlackHoleAnimation 
         coreImageWEBP={blackHole01WEBP}
@@ -17,14 +17,14 @@ const Home = () => {
         ringImagePNG={blackHole02PNG}
       />
 
-      <div className='m-8 flex flex-col items-center h-full relative bottom-1/25'>
+      <div className='m-8 flex flex-col items-center h-full relative bottom-1/19'>
         
         <div className="text-center z-20">
           <h1 className="text-5xl barlow-semi-condensed-extralight text-zinc-300 transform scale-y-150 origin-bottom">FULLSTACK DEVELOPER</h1>
           <p className='oswald text-4xl text-zinc-300'>GIOVANI LINARES PADRON</p>
         </div>
         
-        <div className="h-6"></div>
+        <div className="h-4"></div>
         
         <div className="">
           <ThreeCardsSection />

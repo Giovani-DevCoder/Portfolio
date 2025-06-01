@@ -24,12 +24,12 @@ const Navigation = () => {
     }
   }, [])
 
-  const navItems = [
+  const  navItems = [
     { id: "home", label: "Inicio" },
     { id: "about", label: "Sobre Mí" },
     { id: "projects", label: "Proyectos" },
     { id: "skills", component: "Skills" },
-  ]
+  ];
 
   return (
     <nav className="navigation">
